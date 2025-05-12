@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+
+    // Fetch image files from the 'images' folder in your GitHub repo
+    const images = [
+      'IMG_20231028_104528_780.jpg', 'IMG_20231225_151112_726.jpg', 'IMG_20240107_205130_398.jpg','IMG_20240108_000937_397.jpg','.trashed-1708707222-IMG_20231202_195604.jpg'  // List your image names here
+    ];
+
+    // Generate image gallery
+    images.forEach((image) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = `https://github.com/your-username/image-gallery/raw/main/images/${image}`;
+      gallery.appendChild(imgElement);
+    });
+  </script>
+</body>
+</html>
